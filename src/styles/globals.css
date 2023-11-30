@@ -1,0 +1,148 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.main:before {
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  background-image: url("/assets/grid.svg");
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+
+.page_container {
+  @apply mx-auto max-w-screen-lg p-4 flex flex-col items-center gap-10;
+}
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.head_text {
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+}
+
+.text_center {
+  @apply flex items-center;
+}
+
+.blue_gradient {
+  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
+}
+
+.desc {
+  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+}
+
+.search_input {
+  @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm shadow-lg font-medium focus:border-gray-300 focus:outline-none  focus:ring-0;
+}
+
+.search_heading {
+  @apply flex flex-row justify-between gap-5 items-center;
+}
+
+.book_list {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10;
+}
+
+.book_item {
+  @apply flex flex-col justify-between border border-gray-300 rounded p-4 transition-transform duration-200 hover:scale-105 bg-slate-200;
+}
+
+.book_heading {
+  @apply flex flex-row items-start justify-between gap-5;
+}
+
+.book_title {
+  @apply text-base font-semibold mb-2 lowercase normal-nums;
+}
+
+.book_title::first-letter {
+  @apply capitalize;
+}
+
+.book_author {
+  @apply text-gray-600 text-sm mb-2;
+}
+
+.book_publisher {
+  @apply text-gray-700 pt-3;
+}
+
+.reading_icon {
+  @apply w-5 h-5 flex flex-shrink-0 justify-center cursor-pointer;
+}
+
+.hover_black {
+  @apply cursor-pointer hover:text-white hover:bg-black hover:rounded-full;
+}
+
+.reading_list_page {
+  @apply flex flex-col h-screen p-10 items-center gap-5;
+}
+
+.button_container {
+  @apply flex justify-center pt-5;
+}
+
+.button {
+  @apply rounded-full border pr-4 border-black bg-black py-1.5 px-5 text-slate-100 transition-all hover:bg-slate-100 hover:text-black text-center text-sm font-semibold flex items-center justify-between gap-5 uppercase;
+}
+
+.heading_title {
+  @apply text-2xl pb-10;
+}
+
+.loader {
+  @apply flex justify-center pt-10;
+}
